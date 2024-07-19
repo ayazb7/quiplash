@@ -1,6 +1,6 @@
- align="center">
+<p align="center">
   <a href="" rel="noopener">
-    <img src="frontend\\src\\projects\\images\\quiplash.png" alt="Quiplash Game logo"></a>
+    <img src="quiplash.png" alt="Quiplash Game logo"></a>
 </p>
 <h3 align="center">Quiplash Game</h3>
 
