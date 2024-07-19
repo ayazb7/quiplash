@@ -28,6 +28,7 @@ These instructions will get you a copy of the game running on your local machine
 You will need to have the following software installed on your machine:
 - [Node.js](https://nodejs.org/)
 - [npm](https://www.npmjs.com/)
+- [Python](https://www.python.org/downloads/) (version 3.6 or later)
 - [Azure Functions Core Tools](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local)
 
 ### Installation
@@ -61,7 +62,7 @@ Start the frontend server:
 npm start
 ```
 
-Runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser. The page will reload when you make changes. You may also see any lint errors in the console.
+Runs the app in the development mode. Open [http://localhost:8080](http://localhost:8080) to view it in your browser. The page will reload when you make changes. You may also see any lint errors in the console.
 
 ### Running the Backend
 
@@ -71,10 +72,30 @@ Navigate to the backend directory:
 cd backend
 ```
 
+Create a virtual environment:
+
+```bash
+python -m venv venv
+```
+
+Activate the virtual environment:
+
+- On Windows:
+
+    ```bash
+    venv\Scripts\activate
+    ```
+
+- On macOS/Linux:
+
+    ```bash
+    source venv/bin/activate
+    ```
+
 Install the dependencies:
 
 ```bash
-npm install
+pip install -r requirements.txt
 ```
 
 Start the Azure Functions local server:
@@ -120,4 +141,5 @@ Replace \`YOUR_COSMOS_DB_CONNECTION_STRING\`, \`YOUR_DEPLOYMENT_URL\`, \`YOUR_FU
 ### Backend
 - [Azure Functions](https://azure.microsoft.com/en-us/services/functions/) - Serverless compute service
 - [Cosmos DB](https://azure.microsoft.com/en-us/services/cosmos-db/) - Database service
-- [Axios](https://axios-http.com/) - Promise-based HTTP client
+- [Python](https://www.python.org/) - Programming language
+- [Requests](https://docs.python-requests.org/en/latest/) - HTTP library for Python
