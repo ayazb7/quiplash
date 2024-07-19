@@ -1,0 +1,18 @@
+<div class="game-container">
+    <div class="round-number">{{ round_number }}</div>
+    <h3 class="container-title">{{ current_voting_prompt }}</h3>
+    <p class="center-text winner-player" v-if="round_winner != ''">The winner is <span>{{ round_winner }}</span></p>
+    <p class="center-text" v-else>This vote was a draw!</p>
+
+    <div class="horizontal-buttons">
+        <div v-for="(answer, index) in current_voting_answers" :key="index" class="button-and-player">
+            <button :disabled="true"
+                    :class="{ 'voted-winner': index == voted_option }">
+                {{ answer }}
+            </button>
+            <p class="player-name">{{ answer_players[index] }}</p>
+            <p class="center-text winner-player">{{ answer_votes[index].length }} votes received <span>+ {{ player_scores[index] }} </span></p>
+        </div>
+    </div>    
+    <button @click="nextStage()" v-if="is_admin">Go to next stage</button>
+</div>

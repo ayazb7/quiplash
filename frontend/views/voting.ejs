@@ -1,0 +1,17 @@
+<div class="game-container">
+    <div class="round-number">{{ round_number }}</div>
+    <h3 class="container-title">{{ current_voting_prompt }}</h3>
+    <p class="center-text" v-if="current_voting_players.includes(player_id)">Sit back and wait for judgement!</p>
+    <p class="center-text" v-else-if="prompt_voted">Waiting for everyone else's votes...</p>
+    <p class="center-text" v-else>Vote for your favourite answer!</p>
+
+    <div class="horizontal-buttons">
+        <button v-for="(answer, index) in current_voting_answers" :key="index" 
+                @click="vote(answer, index)"
+                :disabled="current_voting_players.includes(player_id) || prompt_voted"
+                :class="{ 'voted-highlight': index == voted_option }">
+            {{ answer }}
+        </button>
+    </div>    
+    <button @click="nextStage()" v-if="is_admin" :disabled="votes_received < (players.length - 2)">Go to next stage</button>
+</div>

@@ -1,0 +1,411 @@
+body, button, input, textarea {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-image: url('/static/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #acc5d0;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.transparent-nav {
+    background: none;
+    padding-top: 10px; 
+}
+
+.logo {
+    max-height: 80px;
+    width: auto; 
+}
+
+.title {
+    font-weight: 700;
+    font-size: 40px;
+    margin: 0; 
+}
+
+.form-container {
+    position: relative;
+    height: 350px;
+    border-radius: 15px;
+}
+
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.6);
+    color: #293F76;
+    border-radius: 15px;
+}
+
+.spinner-border {
+    margin-bottom: 10px; 
+    color: #293F76;
+}
+
+.loading-container > p {
+    color: #293F76;
+}
+
+#chat { 
+    list-style-type: none; 
+    margin: 0; 
+    padding: 0; 
+    overflow: auto;
+    max-height: 80vh;
+}
+#chat li { 
+    padding: 5px 10px; 
+}
+#chat li:nth-child(odd) { 
+    background-color: rgba(0,0,0,0.2); 
+}
+
+.audience-wait-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px auto; /* Adjust margin as needed */
+    gap: 20px; /* Space between containers */
+    width: 75%;
+}
+
+.game-container.waiting-players, .game-container.answered-players {
+    flex: 1;
+}
+
+#players { 
+    list-style-type: none; 
+    margin: 0; 
+    padding: 0 0 15px 0;
+    overflow: auto;
+    max-height: 80vh;
+}
+#players li { 
+    padding: 5px 10px; 
+    background-color: rgba(0,0,0,0.2); 
+}
+
+.game-container {
+    position: relative;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 60%; /* or any other width according to your design */
+    margin: 20px auto; /* Center the block */
+}
+
+.game-footer {
+    text-align: center !important;
+    margin: auto;
+    margin-top: 20px auto;
+    position: relative;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding-top: 20px;
+    padding-bottom: 10px;
+    width: 40%;
+}
+
+.game-footer h5 {
+    margin: 0;
+    font-weight: bold;
+    color: #3660CB; /* Adjust the color as needed */
+}
+
+.game-footer .game-url {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #3660CB;
+}
+
+.container-title {
+    position: relative;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.round-number {
+    position: absolute;
+    margin-top: 10px;
+    margin-right: 10px;
+    top: 0;
+    right: 0; 
+    background-color: #3073c0; 
+    color: white;
+    border-radius: 50%; 
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.user-list {
+    margin-bottom: 10px;
+}
+
+.player-container span,
+.audience-container span {
+    display: inline-block;
+    background-color: #3660CB; /* Default player color */
+    border-radius: 10px;
+    padding: 5px 10px;
+    color: white;
+    margin-right: 10px;
+    margin-bottom: 10px; /* For wrapping to the next line */
+}
+
+.player-container .admin-player {
+    background-color: #E99446; /* Admin player color */
+}
+
+.display-client span {
+    display: inline-block;
+    background-color: #3660CB;
+    border-radius: 10px;
+    padding: 10px 10px;
+    color: white;
+    font-weight: bold; 
+    text-align: center; 
+}
+
+.winner-player span {
+    display: inline-block;
+    background-color: #E99446;
+    border-radius: 10px;
+    padding: 5px 10px;
+    color: white;
+    margin-bottom: 10px;
+    font-weight: bold; 
+    text-align: center; 
+}
+
+.normal-player span {
+    display: inline-block;
+    background-color: #3660CB;
+    border-radius: 10px;
+    padding: 5px 10px;
+    color: white;
+    /* margin-bottom: 10px; */
+    font-weight: bold; 
+    text-align: center; 
+}
+
+.player-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.audience-container {
+    margin-bottom: 20px;
+}
+
+.flex-space-evenly {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.flex-space-evenly > div {
+    background-color: #ffffff;
+    border-radius: 15px;
+    margin: 10px;
+    padding: 20px;
+}
+
+.playerList{
+    width: 300px;
+}
+
+.greyed-out {
+    background-color: #ccc;
+    color: #666;
+    border: 1px solid #999;
+}
+
+/* Additions to main.css */
+.form-container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 300px;
+    margin: 100px auto; /* This centers the form in the viewport */
+}
+
+input[type="text"],
+input[type="password"] {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box; /* Ensures padding doesn't add to the width */
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: none;
+    background-color: #0056b3;
+    color: white;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+button:hover {
+    background-color: #003d82;
+}
+
+button:disabled,
+button.disabled-button {
+    background-color: #ccc; 
+    color: #666;
+    cursor: default; 
+    pointer-events: none;
+}
+
+button:disabled:hover,
+button.disabled-button:hover {
+    background-color: #ccc;
+}
+
+.horizontal-buttons {
+    display: flex;        
+    justify-content: center;
+    gap: 10px;            
+}
+
+.horizontal-buttons button {
+    padding: 10px 20px; 
+    border: 1px solid #ccc; 
+    background-color: #f8f8f8; 
+    cursor: pointer;     
+    color: #003d82;
+    font-weight: 600;
+}
+
+.horizontal-buttons button:hover {
+    /* Styles for when the button is hovered over */
+    background-color: #e2e2e2; /* Example hover background color */
+}
+
+.horizontal-buttons .voted-highlight {
+    border: 2px solid #003d82; /* Thicker blue border */
+}
+
+.horizontal-buttons .voted-winner {
+    border: 1px solid #E99446; 
+    background-color: #E99446;
+    color: white;
+}
+
+/* Adjust the .horizontal-buttons button:hover style to not change background on hover when disabled */
+.horizontal-buttons button:disabled:hover {
+    background-color: #f8f8f8; /* Keeps the background color the same as non-hovered state */
+}
+
+.button-and-player {
+    flex: 1;
+    text-align: center; /* Aligns the button and the player name to the center */
+}
+
+.button-and-player button {
+    width: 100%; /* Ensures button width fills the container */
+}
+
+.button-and-player .player-name {
+    display: inline-block;
+    background-color: #3073c0;
+    border-radius: 10px;
+    padding: 5px 10px;
+    color: white;
+    margin-bottom: 10px;
+    font-weight: bold; 
+}
+
+.leaderboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.leaderboard .score-item {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    width: 65%;
+    padding: 10px;
+    background-color: #3073c0;
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 5px; 
+}
+
+#snackbar {
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    background-color: #333; /* Black background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 2px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    bottom: 30px; /* 30px from the bottom */
+}
+  
+  /* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar.show {
+    visibility: visible; /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+  
+  /* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+  
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+  
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+  
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+

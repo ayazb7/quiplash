@@ -1,0 +1,27 @@
+<div class="game-container">
+    <h3 class="container-title">Game Lobby</h3>
+    <p v-if="showResetMessage" class="center-text">Game was reset, not enough players.</p>
+    <div class="user-list">
+        <p>Current players:</p>
+        <div class="player-container">
+            <span v-for="(player, index) in players" :class="{ 'admin-player': player_ids[index] == game_admin }" :key="index">
+                {{ player }}
+            </span>
+        </div>
+    </div>
+    <div class="user-list">
+        <p>Current audience:</p>
+        <div class="audience-container">
+            <span v-for="(user, index) in audience.slice(0, 4)" :key="`audience-${index}`">
+                {{ user }}
+            </span>
+            <span v-if="audience.length > 4">
+                +{{ audience.length - 4 }} more
+            </span>
+        </div>
+    </div>
+    <button @click="startGame" v-if="is_admin" :disabled="players.length < 3" :class="{'disabled-button': players.length < 3}">
+        Start Game
+    </button>
+</div>
+

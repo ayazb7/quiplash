@@ -1,0 +1,22 @@
+<!-- <div>
+    <p>Please login or register</p> 
+    <input type="text" class="form-control" v-model="username" placeholder="Username">
+    <input class="form-control" v-model="password" type="password" placeholder="Password">
+    <button @click="register(username, password)">Register</button>
+    <button @click="login(username, password)">Login</button>
+</div> -->
+
+<div class="form-container">
+    <p>Please log in or register</p>
+    <input type="text" class="form-control" v-model="username" placeholder="Username" :disabled="loading">
+    <input type="password" class="form-control" v-model="password" @keyup.enter="login(username, password)" placeholder="Password" :disabled="loading">
+    <button class="btn btn-primary" @click="login(username, password)" :disabled="loading">Login</button>
+    <button class="btn btn-secondary" @click="register(username, password)" :disabled="loading">Register</button>
+    
+    <div class="loading-container" v-show="loading">
+        <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <p>Authenticating...</p>
+    </div>
+</div>

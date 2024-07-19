@@ -1,0 +1,10 @@
+<div class="game-container">
+    <div class="round-number">{{ round_number }}</div>
+    <h3 class="container-title">{{ current_voting_prompt }}</h3>
+
+    <div class="horizontal-buttons">
+        <button v-for="(answer, index) in current_voting_answers" :key="index" :disabled="true">
+            {{ answer }}
+        </button>
+    </div>    
+</div>

@@ -1,0 +1,12 @@
+<div class="game-container">
+    <div class="round-number">{{ round_number }}</div>
+    <div v-for="(prompt, index) in given_prompts" :key="index">
+        <h3>{{ prompt }}</h3>
+        <p>Enter an answer for the prompt which everyone will vote on</p>
+        <input type="text" class="form-control" v-model="prompt_answers[index]" :disabled="prompts_submitted" placeholder="Enter answer">
+    </div>
+
+    <p v-if="prompts_submitted">Waiting for everyone else's responses...</p>
+    <button @click="submitAllPrompts()" :disabled="!allPromptsAnswered || prompts_submitted">Submit</button>
+    <button @click="nextStage()" v-if="is_admin" :disabled="answers_received < players.length">Go to next stage</button>
+</div>

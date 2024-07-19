@@ -1,0 +1,13 @@
+<div class="game-container">
+    <h3 class="container-title">Game Over!</h3>
+    <p class="center-text winner-player" v-if="game_winner != ''">The winner is <span>{{ game_winner }}</span></p>
+    <p class="center-text" v-else>The game is a draw!</p>
+    
+    <div class="leaderboard">
+        <div class="score-item" v-for="(score, playerName) in final_scores" :key="playerId">
+            <span class="player-name">{{ playerName }}</span>
+            <span class="player-score">{{ score }}</span>
+        </div> 
+    </div>
+    <button @click="createNewGame()" v-if="is_admin" class="next-stage-button">Create a new game</button>
+</div>

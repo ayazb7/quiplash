@@ -1,0 +1,7 @@
+<div class="game-container">
+    <h3 class="container-title">Create a new question or prompt</h3> 
+    <p class="center-text">Submit as many prompts as you like!</p>
+    <input type="text" class="form-control" v-model="new_prompt" placeholder="Enter new prompt" :disabled="new_prompt_submitted">
+    
+    <button @click="submitNewPrompt(new_prompt)" :disabled="new_prompt_submitted">Submit</button>
+</div>

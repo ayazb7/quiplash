@@ -1,0 +1,26 @@
+<div class="audience-wait-container">
+    <div class="game-container waiting-players">
+        <h3 class="container-title">Waiting for</h3> 
+        <div v-for="(player, index) in player_ids" class="player-list" :key="index">
+            <p class="normal-player" v-if="!players_submitted.includes(player)">
+                <span>
+                    {{ids_to_players[player]}}
+                </span>
+            </p>
+        </div>
+        <p v-if="players_submitted.length == player_ids.length" class="center-text">All answers have been submitted.</p>
+        <p v-if="players_submitted.length == player_ids.length" class="center-text">Nudge the admin to start the voting stage!</p>
+    </div>
+
+    <div class="game-container answered-players">
+        <h3 class="container-title">Players answered</h3> 
+        <p v-if="players_submitted.length == 0" class="center-text">Enter an answer on your device!</p>
+        <div v-for="(player, index) in players_submitted" class="player-list" :key="index">
+            <p class="normal-player">
+                <span>
+                    {{ids_to_players[player]}}
+                </span>
+            </p>
+        </div>
+    </div>
+</div>

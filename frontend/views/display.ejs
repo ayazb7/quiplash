@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+    <%- include('header'); -%>
+
+    <div id="game">
+        <div v-if="connected">
+            <h4 class="center-text display-client"><span>Display View</span></h4>
+            <div v-if="game_state === 0">
+                <%- include('joining_view'); -%>
+            </div>
+
+            <!-- Prompts View for Display -->
+            <div v-if="game_state === 1">
+                <%- include('prompts_display'); -%>
+            </div>
+
+            <!-- Waiting View for Display -->
+            <div v-else-if=" game_state == 2">
+                <%- include('display_wait_answering'); -%>
+                <%- include('prompts_display'); -%>
+            </div>
+            
+            <!-- Voting View for Display -->
+            <div v-else-if=" game_state == 3">
+                <%- include('display_voting'); -%>
+                <%- include('prompts_display'); -%>
+            </div>
+
+            <!-- Voting View for Display -->
+            <div v-else-if=" game_state == 4">
+                <%- include('results'); -%>
+                <%- include('prompts_display'); -%>
+            </div>
+
+            <!-- Round Scores View -->
+            <div v-else-if="game_state === 5">
+                <%- include('round_scores'); -%>
+                <%- include('prompts_display'); -%>
+            </div>
+
+             <!-- Game Over View -->
+             <div v-else-if="game_state === 6">
+                <%- include('game_over'); -%>
+            </div>
+
+            <div class="game-footer" v-if="game_state === 0">
+                <h5>Join Here:</h5>
+                <p class="game-url">{{ gameUrl }}</p>
+            </div>
+        </div>
+        <div v-else>
+            <div class="game-container">
+                
+            </div>
+        </div>
+    </div>
+
+    <%- include('footer'); -%>
+
+</html>

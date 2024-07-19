@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+    <%- include('header'); -%>
+
+    <!-- <h2 class="title">ECS Quiplash</h2> -->
+
+    <div id="game">
+        <div v-if="connected">
+            <div v-if="authenticated">
+                <!-- <div class="snackbar" v-bind:class="{ 'show': showSnackbar }">
+                    <p>Successfully authenticated</p>
+                </div> -->
+                <!-- <div id="snackbar" v-show="snackbarVisible">Successfully Authenticated</div> -->
+                <!-- Joining View -->
+                <h4 v-if="is_audience" class="center-text display-client"><span>Audience</span></h4>
+                <div v-if="game_state === 0">
+                    <%- include('joining_view'); -%>
+                </div>
+
+                <!-- Prompt Collection View for Players -->
+                <div v-else-if="game_state === 1">
+                    <%- include('new_prompt_view'); -%>
+                </div>
+
+                <!-- Prompt Answer Stage -->
+                <div v-else-if="game_state === 2 && !is_audience">
+                    <%- include('answer_prompt'); -%>
+                    <%- include('submit_prompt_block'); -%>
+                </div>
+
+                <!-- Waiting View for Audience -->
+                <div v-else-if="game_state === 2 && is_audience">
+                    <%- include('audience_wait'); -%>
+                    <%- include('submit_prompt_block'); -%>
+                </div>
+
+                <!-- Voting View -->
+                <div v-else-if="game_state === 3">
+                    <%- include('voting'); -%>
+                    <%- include('submit_prompt_block'); -%>
+                </div>
+
+                <!-- Results View -->
+                <div v-else-if="game_state === 4">
+                    <%- include('results'); -%>
+                    <%- include('submit_prompt_block'); -%>
+                </div>
+
+                <!-- Round Scores View -->
+                <div v-else-if="game_state === 5">
+                    <%- include('round_scores'); -%>
+                    <%- include('submit_prompt_block'); -%>
+                </div>
+
+                 <!-- Game Over View -->
+                 <div v-else-if="game_state === 6">
+                    <%- include('game_over'); -%>
+                </div>
+            </div>
+            <div v-else>
+                <%- include('authenticate') -%>
+            </div>  
+        </div>
+        <div v-else>
+            <p>Connecting...</p>
+        </div>
+    </div>
+
+    <%- include('footer'); -%>
+
+</html>

@@ -1,0 +1,10 @@
+<div class="game-container">
+    <div class="round-number">{{ round_number }}</div>
+    <h3 class="container-title">New Prompts</h3> 
+    <p class="center-text" v-if="prompts_for_display.length == 0">Waiting for players to enter some prompts...</p>
+    <div v-else>
+        <div v-for="prompt in prompts_for_display">
+            <p class="center-text normal-player"><span>{{ prompt.username }}</span>   {{ prompt.prompt }}</p>
+        </div>
+    </div>
+</div>

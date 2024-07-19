@@ -1,0 +1,24 @@
+{
+  "name": "ecsquiplash",
+  "version": "1.0.0",
+  "description": "ECS Quiplash",
+  "main": "app.js",
+  "engines": {
+    "node": "16.x"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "gdeploy": "gcloud app deploy --version test",
+    "hdeploy": "git push heroku master"
+  },
+  "author": "Ayaz Baig",
+  "license": "ECS",
+  "dependencies": {
+    "axios": "^1.6.2",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.9",
+    "express": "^4.19.2",
+    "qs": "^6.12.3",
+    "socket.io": "^4.3.1"
+  }
+}
