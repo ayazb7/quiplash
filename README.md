@@ -6,7 +6,7 @@
 
 ---
 
-<p align="center">A fun multiplayer game built with Node.js for the frontend and Azure Functions for the backend.
+<p align="center">A full stack multiplayer game built with Node.js and Express for the frontend and python Azure Functions for the backend.
 </p>
 
 ## 📝 Table of Contents
@@ -108,7 +108,7 @@ func start --port 8181
 
 ### Setting up Azure Functions
 
-You need to configure your Azure Functions to use your Azure links. Update the \`local.settings.json\` file in the backend directory with your Azure links:
+You need to configure your Azure Functions to use your Azure links. Update the `local.settings.json` file in the backend directory with your Azure links:
 
 ```json
 {
@@ -128,7 +128,7 @@ You need to configure your Azure Functions to use your Azure links. Update the \
 }
 ```
 
-Replace \`YOUR_COSMOS_DB_CONNECTION_STRING\`, \`YOUR_DEPLOYMENT_URL\`, \`YOUR_FUNCTION_APP_KEY\`, and \`YOUR_TRANSLATION_KEY\` with your actual Azure configuration values.
+Replace `YOUR_COSMOS_DB_CONNECTION_STRING`, `YOUR_DEPLOYMENT_URL`, `YOUR_FUNCTION_APP_KEY`, and `YOUR_TRANSLATION_KEY` with your actual Azure configuration values.
 
 ## ⛏️ Built With <a name="built_with"></a>
 
